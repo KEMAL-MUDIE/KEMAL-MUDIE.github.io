@@ -100,7 +100,7 @@ export const projects = {
       image: "images/portfolio.png",
       summary:
         "Web Portfolio to showcase acadmics, skills, projects and contact details in better manner.",
-      preview: "https://github.com/ahmecse",
+      preview: "https://github.com/KEMAL-MUDIE",
       techStack: ["HTML", "Bootstrap", "JavaScript"],
     },
     {
