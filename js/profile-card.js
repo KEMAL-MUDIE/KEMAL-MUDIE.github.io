@@ -71,7 +71,7 @@ window.addEventListener("DOMContentLoaded", async function () {
                             </a>
                         </span>
                         <span style="font-weight: 400; color: #586069; font-size: 12px">
-                            @${html_url.replace('https://', '')}
+                            @${html_url.replace('https://www.linkedin.com/in/kemalmudie/')}
                         </span>
                     </div>
                 </div>
@@ -106,3 +106,45 @@ window.addEventListener("DOMContentLoaded", async function () {
         `;
     });
 });
+
+
+document.querySelectorAll(".linkedin-card").forEach(async function (el) {
+    const username = el.getAttribute("username");
+
+    // Retrieve LinkedIn profile information using an API or any other method
+    const profileInfo = await getProfileInfo(username);
+    const { name, profile_image_url, connections, headline, public_url } = profileInfo;
+
+    el.innerHTML = `
+        <div style="font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; border: 1px solid #e1e4e8; border-radius: 6px; line-height: 1.5; padding: 16px; font-size: 14px; color: #24292e; background-color: #f9bf3f;">
+            <div style="display: flex; align-items: center; margin-top: -4px">
+                <img style="width: 48px; height: 48px; border-radius: 50%" src="${profile_image_url}" alt="Profile image"></img>
+                <div style="display: flex; flex-direction: column; margin-left: 12px">
+                    <span style="font-weight: 500; color: #000; font-size: 18px">
+                        <a style="text-decoration: none; color: inherit;" target="_blank" href="${public_url}">
+                            ${name}
+                        </a>
+                    </span>
+                    <span style="font-weight: 400; color: #586069; font-size: 12px">
+                        ${headline}
+                    </span>
+                </div>
+            </div>
+
+            <div style="margin-top: 12px; display: flex; justify-content: space-evenly; align-items: center; ">
+                <div style="display: flex; flex-direction: column;">
+                    <span style="font-size: 10px; font-weight: 500; color: #586069;">
+                        CONNECTIONS
+                    </span>
+                    <span style="font-weight: 600; color: #211F1F; font-size: 32px; line-height: 1">
+                        ${connections}
+                    </span>
+                </div>
+                <!-- Add more LinkedIn-specific information here -->
+            </div>
+        </div>
+    `;
+});
+
+
+
