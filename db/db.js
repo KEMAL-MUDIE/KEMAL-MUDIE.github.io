@@ -2,7 +2,7 @@ export const bio = {
   about: {
     text: [
       "Hi &#128075;",
-      "I'm Ahmed Shmels Muhe. I’m currently working as Machine Learning Inten at Suvidha Foundation (Suvidha Mahila Mandal) specialize NLP,ML and deep Learning Applications. I did my undergrad in CS from VIT Vellore.",
+      "I'm Kemal Mudie Tosora. I’m currently working as Machine Learning Inten at Suvidha Foundation (Suvidha Mahila Mandal) specialize NLP,ML and deep Learning Applications. I did my undergrad in CS from VIT Vellore.",
       "I'm a developer, geek and curious human besides being an Data Science enthusiast. I have experience of delivering solutions for interesting problems from startup and industry space.",
       "I l.",
     ],
@@ -249,18 +249,29 @@ export const footer = [
   {
     label: "Dev Profiles",
     data: [
+
+	{
+        text: "Hackerearth",
+        link: "https://www.hackerearth.com/@kemal7",
+      },
+	    
       {
         text: "Stackoverflow",
-        link: "https://meta.stackexchange.com/users/1342771/ahmecse/",
+        link: "https://stackoverflow.com/users/12653325/kemal",
       },
       {
         text: "GitHub",
-        link: "https://github.com/ahmecse",
+        link: "https://github.com/KEMAL-MUDIE",
       },
       {
         text: "LeetCode",
-        link: "https://leetcode.com/ahmecse/",
+        link: "https://leetcode.com/kemalmu/",
       },
+	{
+        text: "Codechef",
+        link: "https://www.codechef.com/users/huuno",
+      },
+	    
     ],
   },
   {
@@ -276,7 +287,7 @@ export const footer = [
       },
       {
         text: "Clone this page",
-        link: "https://ahmecse.github.io/",
+        link: "https://kemal-mudie.github.io/",
       },
     ],
   },
@@ -285,29 +296,34 @@ export const footer = [
     data: [
       {
         text: "Linkedin",
-        link: "https://www.linkedin.com/in/ahmecse/",
+        link: "https://www.linkedin.com/in/kemalmudie/",
       },
       {
         text: "Twitter",
-        link: "https://twitter.com/AHMED_SHMELS",
+        link: "https://twitter.com/Kemalmudiet",
       },
       {
-        text: "Buy me a coffee",
-        link: "https://www.buymeacoffee.com/ahmecse",
+        text: "fb Buy me a coffee",
+        link: "https://www.facebook.com/profile.php?id=100010403442592",
       },
+	{
+        text: "Medium",
+        link: "https://medium.com/@kemal.mudie",
+      },
+	    
     ],
   },
   {
     label: "copyright-text",
     data: [
-      "Made with &hearts; by Ahmed Shmels .",
+      "Made with & hearts; by Kemal  .",
       "&copy; No Copyrights. Feel free to use this template.",
     ],
   },
 ];
 
-const gitUserName = 'ahmecse';
-const mediumUserName = 'ahmecse';
+const gitUserName = 'KEMAL-MUDIE';
+const mediumUserName = 'Kemal Mudie';
 
 export const URLs = {
 	mediumURL: `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${mediumUserName}`,
