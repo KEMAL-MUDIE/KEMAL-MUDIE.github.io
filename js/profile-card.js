@@ -128,8 +128,8 @@ window.addEventListener("DOMContentLoaded", async function () {
   }
 
   async function getLinkedInProfile(username) {
-    const clientId = "YOUR_CLIENT_ID"; // Replace with your actual client ID
-    const clientSecret = "YOUR_CLIENT_SECRET"; // Replace with your actual client secret
+    const clientId = 7743nfb54hwdac ; // Replace with your actual client ID
+    const clientSecret = FRTJja2c69DPXIXs ; // Replace with your actual client secret
 
     // Step 1: Get an access token from LinkedIn
     const tokenResponse = await fetch(
