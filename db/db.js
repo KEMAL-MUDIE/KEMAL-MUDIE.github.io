@@ -167,7 +167,7 @@ export const projects = {
     },
     {
       projectName: "Delivery+",
-      image: "images/AM-Logo-.png",
+      image: "images/photo_6280780623018832389_x.jpg",
       summary: "Android Application to display website in android devices.",
       preview:
         "https://play.google.com/store/apps/details?id=com.americanmarket.americanmarketandroid",
