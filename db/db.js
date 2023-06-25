@@ -4,7 +4,7 @@ export const bio = {
       "Hi &#128075;",
       "I'm Ahmed Shmels Muhe. I’m currently working as Machine Learning Inten at Suvidha Foundation (Suvidha Mahila Mandal) specialize NLP,ML and deep Learning Applications. I did my undergrad in CS from VIT Vellore.",
       "I'm a developer, geek and curious human besides being an Data Science enthusiast. I have experience of delivering solutions for interesting problems from startup and industry space.",
-      "I love to read, Code, and travel.",
+      "I l, and travel.",
     ],
   },
   contact: {
