@@ -121,44 +121,63 @@ window.addEventListener("DOMContentLoaded", async function () {
     return resp.json();
   }
 
+window.addEventListener("DOMContentLoaded", async function () {
+  async function get(url) {
+    const resp = await fetch(url);
+    return resp.json();
+  }
+
+  async function getLinkedInProfile(username) {
+    const clientId = "YOUR_CLIENT_ID"; // Replace with your actual client ID
+    const clientSecret = "YOUR_CLIENT_SECRET"; // Replace with your actual client secret
+
+    // Step 1: Get an access token from LinkedIn
+    const tokenResponse = await fetch(
+      `https://www.linkedin.com/oauth/v2/accessToken?grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}`
+    );
+    const tokenData = await tokenResponse.json();
+    const accessToken = tokenData.access_token;
+
+    // Step 2: Use the access token to fetch the profile information
+    const profileResponse = await fetch(
+      `https://api.linkedin.com/v2/me?projection=(id,firstName,lastName,profilePicture(displayImage~:playableStreams))`,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "X-Restli-Protocol-Version": "2.0.0",
+        },
+      }
+    );
+    const profileData = await profileResponse.json();
+    return profileData;
+  }
+
   document.querySelectorAll(".linkedin-card").forEach(async function (el) {
     const username = el.getAttribute("username");
 
-    // Retrieve LinkedIn profile information using an API or any other method
-    const profileInfo = await getProfileInfo(username);
-    const { name, profile_image_url, connections, headline, public_url } = profileInfo;
+    // Retrieve LinkedIn profile information using the getLinkedInProfile function
+    const profileInfo = await getLinkedInProfile(username);
+    const { firstName, lastName, profilePicture } = profileInfo;
+
+    const profileImageUrl =
+      profilePicture?.displayImage~.elements[0]?.identifiers[0]?.identifier;
 
     el.innerHTML = `
       <div style="font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; border: 1px solid #e1e4e8; border-radius: 6px; line-height: 1.5; padding: 16px; font-size: 14px; color: #24292e; background-color: #f9bf3f;">
         <div style="display: flex; align-items: center; margin-top: -4px">
-          <img style="width: 48px; height: 48px; border-radius: 50%" src="${profile_image_url}" alt="Profile image"></img>
+          <img style="width: 48px; height: 48px; border-radius: 50%" src="${profileImageUrl}" alt="Profile image"></img>
           <div style="display: flex; flex-direction: column; margin-left: 12px">
             <span style="font-weight: 500; color: #000; font-size: 18px">
-              <a style="text-decoration: none; color: inherit;" target="_blank" href="${public_url}">
-                ${name}
-              </a>
+              ${firstName} ${lastName}
             </span>
-            <span style="font-weight: 400; color: #586069; font-size: 12px">
-              ${headline}
-            </span>
+            <!-- Add more LinkedIn profile information here -->
           </div>
         </div>
 
         <div style="margin-top: 12px; display: flex; justify-content: space-evenly; align-items: center; ">
-          <div style="display: flex; flex-direction: column;">
-            <span style="font-size: 10px; font-weight: 500; color: #586069;">
-              CONNECTIONS
-            </span>
-            <span style="font-weight: 600; color: #211F1F; font-size: 32px; line-height: 1">
-              ${connections}
-            </span>
-          </div>
           <!-- Add more LinkedIn-specific information here -->
         </div>
       </div>
     `;
   });
 });
-
-
-
