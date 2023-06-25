@@ -9,7 +9,7 @@ export const bio = {
   },
   contact: {
     text: [
-      "If you would like to get in touch with me, be it for exploring a technology, a business, or to just say hi, feel free to send me an email. My email address is: ahmecse@gmail.com",
+      "If you would like to get in touch with me, be it for exploring a technology, a business, or to just say hi, feel free to send me an email. My email address is: kemal.mudie@gmail.com",
     ],
   },
 };
